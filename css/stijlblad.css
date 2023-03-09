@@ -131,6 +131,7 @@ picture {
     position: relative;
     display: inline-block;
   }
+
   .overlay {
     position: absolute;
     top: 0;
