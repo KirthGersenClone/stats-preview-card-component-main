@@ -1,0 +1,178 @@
+@import url("./normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+:root {
+  --kl-achtergrond-: hsl(233, 47%, 7%);
+  --kl-donkerblauw-: hsl(244, 38%, 16%);
+  --kl-violet-: hsl(277, 64%, 61%);
+
+  --kl-wit-: hsl(0, 0%, 100%);
+  --kl-paragraaf-: hsla(0, 0%, 100%, 0.75);
+  --kl-statistiek-: hsla(0, 0%, 100%, 0.6);
+
+  font-size: 15px;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--kl-achtergrond-);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  max-width: 375px;
+  max-height: 956px;
+  background-color: var(--kl-donkerblauw-);
+  margin: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+/**
+In the HTML, we have a container element that includes the image and an empty div element for the overlay. 
+We set the position of the container to relative so that we can position the overlay on top of the image using absolute positioning.
+
+In the CSS, we set the position of the overlay to absolute and the top, left, width, and height properties to 0 to make it cover the entire image. 
+We set the background-color of the overlay to  hsla(277, 64%, 61%, 0.5) which creates a transparent violet color. 
+You can adjust the alpha value (the last parameter) to control the opacity of the overlay. **/
+
+picture {
+  position: relative;
+  display: inline-block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(277, 64%, 61%, 0.6);
+}
+.flex-container-top-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.flex-container-bottom-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.hoofding {
+  color: var(--kl-wit-);
+  text-align: center;
+  padding: 0 2rem;
+  font-weight: 800;
+  font-size: 1.75rem;
+}
+#soft-violet {
+  color: var(--kl-violet-);
+}
+#main-paragraph {
+  color: var(--kl-paragraaf-);
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 2rem;
+  font-size: 300;
+}
+.flex-container-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.stat-headings {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--kl-wit-);
+}
+.stat-type {
+  font-family: "Lexend Deca";
+  color: var(--kl-statistiek-);
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+/** Bij @media de afbeelding een order geven hoger dan de tekst **/
+@media screen and (min-width: 800px) {
+  .wrapper {
+    max-width: 1440px;
+    max-height: 800px;
+    background-color: var(--kl-donkerblauw-);
+    margin: 0 11rem;
+    border-radius: 10px;
+    overflow: hidden;
+    /****/
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  /**
+  In the HTML, we have a container element that includes the image and an empty div element for the overlay. 
+  We set the position of the container to relative so that we can position the overlay on top of the image using absolute positioning.
+
+  In the CSS, we set the position of the overlay to absolute and the top, left, width, and height properties to 0 to make it cover the entire image. 
+  We set the background-color of the overlay to  hsla(277, 64%, 61%, 0.5) which creates a transparent violet color. 
+  You can adjust the alpha value (the last parameter) to control the opacity of the overlay. **/
+
+  picture {
+    position: relative;
+    display: inline-block;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(277, 72%, 31%, 0.7);
+  }
+  .flex-container-top-right {
+    margin-bottom: auto;
+    flex-basis: 36rem;
+  }
+  .flex-container-bottom-left {
+    flex-basis: 36rem;
+    margin-bottom: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 5rem 4rem;
+  }
+  .hoofding {
+    color: var(--kl-wit-);
+    text-align: left;
+    padding: initial;
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+  #main-paragraph {
+    color: var(--kl-paragraaf-);
+    line-height: 1.7;
+    text-align: left;
+    padding: initial;
+    font-size: 300;
+    max-width: 25rem;
+  }
+  .flex-container-stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+}

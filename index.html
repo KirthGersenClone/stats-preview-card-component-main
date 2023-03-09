@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/stijlblad.css" />
+    <title>Frontend Mentor | Stats preview card component</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="flex-container-top-right">
+        <picture>
+          <source srcset="./images/image-header-desktop.jpg" media="(min-width:800px)" />
+          <img src="./images/image-header-mobile.jpg" alt="image-header-mobile" class="image-header-mobile" />
+          <div class="overlay"></div>
+        </picture>
+      </div>
+      <div class="flex-container-bottom-left">
+        <div class="hoofding">Get <span id="soft-violet">insights</span> that help your business grow.</div>
+        <div id="main-paragraph">
+          Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and
+          overall efficiency.
+        </div>
+        <div class="flex-container-stat">
+          <div><span class="stat-headings">10k+</span> <span class="stat-type"> companies</span></div>
+          <div><span class="stat-headings"> 314</span> <span class="stat-type"> templates</span></div>
+          <div><span class="stat-headings">12M+</span> <span class="stat-type"> queries</span></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
